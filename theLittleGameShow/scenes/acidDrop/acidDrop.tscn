@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://gnihcxpckec"]
+
+[ext_resource type="Script" uid="uid://b6gvyoa245m8s" path="res://scenes/acidDrop/acid_drop.gd" id="1_em3uw"]
+[ext_resource type="Texture2D" uid="uid://dv3hkjoss7yup" path="res://scenes/acidDrop/aciddrop.png" id="1_le2ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
+size = Vector2(6, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em3uw"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67rvp"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eon2c"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1br08"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vs3t1"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujru4"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spfao"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksed6"]
+atlas = ExtResource("1_le2ky")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qywog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em3uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67rvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eon2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1br08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vs3t1")
+}],
+"loop": 1,
+"name": &"evaporate",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujru4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spfao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksed6")
+}],
+"loop": 1,
+"name": &"falling",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
+size = Vector2(6, 12)
+
+[node name="AcidDrop" type="CharacterBody2D" unique_id=83749576]
+collision_layer = 2
+script = ExtResource("1_em3uw")
+
+[node name="collison" type="CollisionShape2D" parent="." unique_id=556735286]
+rotation = -0.002759574
+shape = SubResource("RectangleShape2D_qywog")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=2093914797]
+sprite_frames = SubResource("SpriteFrames_qywog")
+animation = &"falling"
+
+[node name="area" type="Area2D" parent="." unique_id=52389678]
+collision_layer = 2
+collision_mask = 129
+
+[node name="collision" type="CollisionShape2D" parent="area" unique_id=2007599806]
+shape = SubResource("RectangleShape2D_1j0vx")
+debug_color = Color(0.98475224, 0, 0.34504607, 0.41960785)
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

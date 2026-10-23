@@ -1,3 +1,8 @@
 res://scenes/mainGame/mainGame.tscn
 res://player/playerScene.tscn
 res://player/playerMovement.gd
+res://scenes/acidDrop/acidDrop.tscn
+res://scenes/acidDrop/acid_drop.gd
+res://globalValues/globalValues.gd
+res://UI/generalUI.tscn
+res://UI/general_ui.gd

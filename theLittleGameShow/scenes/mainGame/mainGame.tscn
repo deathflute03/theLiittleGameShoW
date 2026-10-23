@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://ceaf0eubx1bgy"]
 
 [ext_resource type="Texture2D" uid="uid://85gstv8u31fy" path="res://scenes/mainGame/bG.png" id="1_61dfx"]
+[ext_resource type="PackedScene" uid="uid://basjb7t32htae" path="res://UI/generalUI.tscn" id="1_o3sv8"]
 [ext_resource type="PackedScene" uid="uid://dhn45pigmlprm" path="res://player/playerScene.tscn" id="2_xku7g"]
+[ext_resource type="PackedScene" uid="uid://gnihcxpckec" path="res://scenes/acidDrop/acidDrop.tscn" id="3_w24tc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
 size = Vector2(128, 11)
 
 [node name="main" type="Node2D" unique_id=1665889982]
+
+[node name="generalUI" parent="." unique_id=279140870 instance=ExtResource("1_o3sv8")]
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=1776856293]
 
@@ -20,3 +24,6 @@ shape = SubResource("RectangleShape2D_qywog")
 
 [node name="PlayerScene" parent="." unique_id=519120538 instance=ExtResource("2_xku7g")]
 position = Vector2(8, 115)
+
+[node name="AcidDrop" parent="." unique_id=751736766 instance=ExtResource("3_w24tc")]
+position = Vector2(61, -21)

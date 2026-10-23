@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://basjb7t32htae"]
+
+[ext_resource type="Script" uid="uid://beqmotruy47mx" path="res://UI/general_ui.gd" id="1_023oe"]
+[ext_resource type="FontFile" uid="uid://br63q6wkigt8b" path="res://UI/home-video/HomeVideo-Regular.otf" id="1_laqn0"]
+
+[node name="generalUI" type="Control" unique_id=279140870]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_023oe")
+
+[node name="canvas" type="CanvasLayer" parent="." unique_id=1568580347]
+
+[node name="scoreLabel" type="Label" parent="canvas" unique_id=1547688240]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_laqn0")
+theme_override_font_sizes/font_size = 5
+text = "7021"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="hpLabel" type="Label" parent="canvas" unique_id=1468211767]
+offset_top = 123.0
+offset_right = 40.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("1_laqn0")
+theme_override_font_sizes/font_size = 5
+text = "hp: 5"
