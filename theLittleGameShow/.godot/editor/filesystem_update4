@@ -1,3 +1,3 @@
-res://player/playerBox/playerBox.tscn
-res://miniGames/fistDrop/fistDrop.tscn
-res://player/playerBox/scripts/playerMovement.gd
+res://scenes/mainGame/mainGame.tscn
+res://player/playerScene.tscn
+res://player/playerMovement.gd
