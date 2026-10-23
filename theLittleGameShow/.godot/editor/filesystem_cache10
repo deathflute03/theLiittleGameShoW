@@ -1,0 +1,14 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1792722780
+icon.svg::CompressedTexture2D::3220890016767094800::1792721871::1792722311::1::::<><><>0<>0<>838bfc087998bb31cf46bc7efc679983<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://miniGames/::1792722852
+::res://miniGames/fistDrop/::1792722858
+::res://miniGames/fistDrop/assets/::1792722894
+box.png::CompressedTexture2D::6873743904564136259::1792722894::1792722895::1::::<><><>0<>0<>d018f4f6db77c98f90ec7945445872a6<>res://.godot/imported/box.png-13cf3a0efe30a5f209ea66ae130e4c31.ctex::
+::res://player/::1792722341
+::res://player/playerBox/::1792722758
+playerBox.tscn::PackedScene::5608410890466611018::1792722758::0::1::::<><><>0<>0<><>::uid://bthcrglc4deco::::res://player/playerBox/sprites/idlePlayer.png<>uid://rr58t0ycuvnu::::res://player/playerBox/sprites/jumpPlayer.png<>uid://bkvuer8takij0::::res://player/playerBox/sprites/walkPlayer.png
+::res://player/playerBox/sprites/::1792722389
+idlePlayer.png::CompressedTexture2D::3734611481838747594::1792722389::1792722389::1::::<><><>0<>0<>8ec62916c1317fb3300a9446afdb0ebc<>res://.godot/imported/idlePlayer.png-68f650a7fa7b2596f1ec4b44290db5d1.ctex::
+jumpPlayer.png::CompressedTexture2D::1230186242305119010::1792722389::1792722389::1::::<><><>0<>0<>38df660da5d99ead306dd71ce9fc0b2c<>res://.godot/imported/jumpPlayer.png-669084f9ec365baab7a8cfd496081b2c.ctex::
+walkPlayer.png::CompressedTexture2D::3132883480678802907::1792722389::1792722389::1::::<><><>0<>0<>479620232f42cb55d866592a7de4df9b<>res://.godot/imported/walkPlayer.png-3c422447364f54e5f256a7d5ac5acf02.ctex::

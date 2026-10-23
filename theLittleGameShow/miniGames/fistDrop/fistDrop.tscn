@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://fqlqojyx8q5w"]
+
+[ext_resource type="Texture2D" uid="uid://c46xs74n3pvvn" path="res://miniGames/fistDrop/assets/box.png" id="1_c7hk5"]
+[ext_resource type="PackedScene" uid="uid://cl50ycn6wijg1" path="res://player/playerBox/playerBox.tscn" id="2_t1oh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
+size = Vector2(124, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
+size = Vector2(2, 125.5)
+
+[node name="FistDrop" type="Node2D" unique_id=1084906828]
+
+[node name="staticBody" type="StaticBody2D" parent="." unique_id=1389146300]
+
+[node name="Box" type="Sprite2D" parent="staticBody" unique_id=1162896109]
+position = Vector2(120, 128)
+texture = ExtResource("1_c7hk5")
+
+[node name="collisionShape" type="CollisionShape2D" parent="staticBody" unique_id=1083053966]
+position = Vector2(119, 190)
+shape = SubResource("RectangleShape2D_qywog")
+
+[node name="collisionShape4" type="CollisionShape2D" parent="staticBody" unique_id=1014346740]
+position = Vector2(119, 65)
+shape = SubResource("RectangleShape2D_qywog")
+
+[node name="collisionShape2" type="CollisionShape2D" parent="staticBody" unique_id=1110131335]
+position = Vector2(58, 126.5)
+shape = SubResource("RectangleShape2D_1j0vx")
+
+[node name="collisionShape3" type="CollisionShape2D" parent="staticBody" unique_id=484753452]
+position = Vector2(182, 126.25)
+shape = SubResource("RectangleShape2D_1j0vx")
+
+[node name="PlayerBox" parent="." unique_id=1581312722 instance=ExtResource("2_t1oh7")]
+position = Vector2(79, 172)
