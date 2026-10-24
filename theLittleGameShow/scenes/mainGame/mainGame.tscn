@@ -42,17 +42,18 @@ shape = SubResource("RectangleShape2D_1j0vx")
 
 [node name="bG" type="Sprite2D" parent="ground" unique_id=1649982502]
 z_index = -1
-position = Vector2(64, 59)
+position = Vector2(64, 55)
 scale = Vector2(1, 1.0067568)
 texture = ExtResource("4_5q46h")
 
 [node name="BgFloor" type="Sprite2D" parent="ground" unique_id=115889598]
 z_index = 1
-position = Vector2(64, 59)
+position = Vector2(64, 57)
 texture = ExtResource("5_rj1ge")
 
 [node name="collison" type="CollisionShape2D" parent="ground" unique_id=1197926708]
-position = Vector2(64, 122.5)
+z_index = 1
+position = Vector2(64, 121)
 shape = SubResource("RectangleShape2D_qywog")
 
 [node name="BinFall" parent="." unique_id=1566326600 instance=ExtResource("4_o3sv8")]
@@ -60,9 +61,3 @@ position = Vector2(36, -17)
 
 [node name="AcidDrop5" parent="." unique_id=303485572 instance=ExtResource("6_s4nnb")]
 position = Vector2(68, -6)
-
-[node name="AcidDrop6" parent="." unique_id=83749576 instance=ExtResource("6_s4nnb")]
-position = Vector2(76, -6)
-
-[node name="AcidDrop7" parent="." unique_id=1152628369 instance=ExtResource("6_s4nnb")]
-position = Vector2(84, -6)

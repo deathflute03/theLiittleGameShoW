@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://basjb7t32htae"]
 
 [ext_resource type="Script" uid="uid://beqmotruy47mx" path="res://UI/general_ui.gd" id="1_023oe"]
-[ext_resource type="FontFile" uid="uid://br63q6wkigt8b" path="res://UI/home-video/HomeVideo-Regular.otf" id="1_laqn0"]
+[ext_resource type="Texture2D" uid="uid://dg2hepfcxqofr" path="res://UI/heartBottom.png" id="2_r8a53"]
+[ext_resource type="Texture2D" uid="uid://dtemegblqxa63" path="res://UI/heartTop.png" id="3_v52yj"]
 
 [node name="generalUI" type="Control" unique_id=279140870]
 layout_mode = 3
@@ -10,26 +11,19 @@ script = ExtResource("1_023oe")
 
 [node name="canvas" type="CanvasLayer" parent="." unique_id=1568580347]
 
-[node name="scoreLabel" type="Label" parent="canvas" unique_id=1547688240]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -42.0
-offset_top = -5.0
-grow_horizontal = 0
+[node name="health" type="TextureProgressBar" parent="canvas" unique_id=325586791]
+anchors_preset = -1
+anchor_left = 0.49600002
+anchor_top = 0.95300007
+anchor_right = 0.49600002
+anchor_bottom = 0.95300007
+offset_left = -10.488003
+offset_top = -2.9840088
+offset_right = 10.511997
+offset_bottom = 3.0159912
+grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_laqn0")
-theme_override_font_sizes/font_size = 5
-text = "7021"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="hpLabel" type="Label" parent="canvas" unique_id=1468211767]
-offset_top = 123.0
-offset_right = 40.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("1_laqn0")
-theme_override_font_sizes/font_size = 5
-text = "hp: 5"
+max_value = 3.0
+value = 3.0
+texture_under = ExtResource("2_r8a53")
+texture_progress = ExtResource("3_v52yj")

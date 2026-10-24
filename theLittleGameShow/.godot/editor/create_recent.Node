@@ -1,3 +1,7 @@
+TextureProgressBar
+ProgressBar
+TextureRect
+HBoxContainer
 AnimatedSprite2D
 AudioStreamPlayer
 StaticBody2D
@@ -9,5 +13,3 @@ Sprite2D
 Label
 CanvasLayer
 Control
-GPUParticles2D
-Node2D

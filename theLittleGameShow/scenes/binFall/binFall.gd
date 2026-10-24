@@ -6,7 +6,7 @@ var maxSpeed = 300.0
 var JUMP_VELOCITY = -400.0
 
 var damage = 3
-var score = 20
+var score = 40
 var heal = 0
 
 var warning_done = false
@@ -39,8 +39,10 @@ func _physics_process(delta: float) -> void:
 			sprite.play("normal")
 			SPEED = lerp(SPEED, maxSpeed, 0.08)
 			velocity.y +=  SPEED * delta
+		
 		if is_on_floor() and was_on_floor == false:
 			fallAudio.play()
+			addScore()
 			sprite.play("ground")
 			was_on_floor = true
 			camera.trigger_shake()

@@ -4,3 +4,5 @@ res://scenes/mainGame/mainGame.tscn
 res://scenes/acidDrop/acidDrop.tscn
 res://player/playerScene.tscn
 res://scenes/acidDrop/acid_drop.gd
+res://UI/generalUI.tscn
+res://UI/general_ui.gd
