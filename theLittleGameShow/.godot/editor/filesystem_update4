@@ -1,3 +1,6 @@
-res://scenes/mainGame/mainGame.tscn
+res://scenes/binFall/binFall.tscn
 res://scenes/binFall/binFall.gd
-res://scenes/mainGame/camer_shake.gd
+res://scenes/mainGame/mainGame.tscn
+res://scenes/acidDrop/acidDrop.tscn
+res://player/playerScene.tscn
+res://scenes/acidDrop/acid_drop.gd

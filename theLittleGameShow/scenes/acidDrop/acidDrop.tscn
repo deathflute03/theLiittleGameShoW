@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b6gvyoa245m8s" path="res://scenes/acidDrop/acid_drop.gd" id="1_em3uw"]
 [ext_resource type="Texture2D" uid="uid://dv3hkjoss7yup" path="res://scenes/acidDrop/aciddrop.png" id="1_le2ky"]
+[ext_resource type="AudioStream" uid="uid://c0v70mgqyud4q" path="res://scenes/acidDrop/sound.wav" id="3_67rvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
 size = Vector2(6, 12)
@@ -78,7 +79,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
 size = Vector2(6, 12)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5q46h"]
+random_pitch = 1.0437913
+random_volume_offset_db = 1.24
+streams_count = 1
+stream_0/stream = ExtResource("3_67rvp")
+
 [node name="AcidDrop" type="CharacterBody2D" unique_id=83749576]
+z_index = 5
 collision_layer = 2
 script = ExtResource("1_em3uw")
 
@@ -97,5 +105,10 @@ collision_mask = 129
 [node name="collision" type="CollisionShape2D" parent="area" unique_id=2007599806]
 shape = SubResource("RectangleShape2D_1j0vx")
 debug_color = Color(0.98475224, 0, 0.34504607, 0.41960785)
+
+[node name="dropletSound" type="AudioStreamPlayer" parent="." unique_id=1705686991]
+stream = SubResource("AudioStreamRandomizer_5q46h")
+volume_db = -16.725
+pitch_scale = 1.54
 
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

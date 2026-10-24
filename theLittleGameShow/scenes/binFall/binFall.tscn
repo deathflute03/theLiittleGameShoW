@@ -1,20 +1,54 @@
 [gd_scene format=3 uid="uid://dic7g0mwrmogi"]
 
-[ext_resource type="Texture2D" uid="uid://c0vj0r4362032" path="res://scenes/binFall/face.png" id="1_go1jq"]
 [ext_resource type="Script" uid="uid://4fp8kfgelw83" path="res://scenes/binFall/binFall.gd" id="1_xgxvp"]
+[ext_resource type="Texture2D" uid="uid://ce3nkqobw3aip" path="res://scenes/binFall/texture.png" id="2_xl5il"]
+[ext_resource type="Texture2D" uid="uid://buob2im84e3h2" path="res://scenes/binFall/blastWarning.png" id="3_o2ppc"]
+[ext_resource type="AudioStream" uid="uid://nsh36gd6w77i" path="res://scenes/binFall/sound.mp3" id="4_vffqu"]
+[ext_resource type="AudioStream" uid="uid://cqx0efwwt5ino" path="res://scenes/binFall/alert.wav" id="5_xl5il"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y25i5"]
+atlas = ExtResource("2_xl5il")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cst7"]
+atlas = ExtResource("2_xl5il")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qywog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y25i5")
+}],
+"loop": 1,
+"name": &"ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0cst7")
+}],
+"loop": 1,
+"name": &"normal",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
-size = Vector2(32, 32)
+size = Vector2(14, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
-size = Vector2(32, 32)
+size = Vector2(14, 35)
 
-[node name="BinFall" type="CharacterBody2D" unique_id=1566326600]
+[node name="BinFall" type="CharacterBody2D" unique_id=1813090224]
 collision_layer = 2
+collision_mask = 129
 script = ExtResource("1_xgxvp")
 
-[node name="sprite2D" type="Sprite2D" parent="." unique_id=1868794700]
-texture = ExtResource("1_go1jq")
+[node name="sprite2D" type="AnimatedSprite2D" parent="." unique_id=237895188]
+position = Vector2(0, -8)
+rotation = 3.1415927
+sprite_frames = SubResource("SpriteFrames_qywog")
+animation = &"ground"
 
 [node name="collison" type="CollisionShape2D" parent="." unique_id=1231653778]
 shape = SubResource("RectangleShape2D_qywog")
@@ -24,5 +58,22 @@ collision_layer = 2
 collision_mask = 129
 
 [node name="collision" type="CollisionShape2D" parent="area" unique_id=1761542200]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_1j0vx")
 debug_color = Color(0.7047281, 0, 0.25844368, 0.41960785)
+
+[node name="warningSprite" type="Sprite2D" parent="." unique_id=1615966834]
+z_index = -1
+position = Vector2(4.7683716e-07, 93.25)
+scale = Vector2(0.43750003, 1.0371621)
+texture = ExtResource("3_o2ppc")
+
+[node name="audioFall" type="AudioStreamPlayer" parent="." unique_id=1974721788]
+stream = ExtResource("4_vffqu")
+volume_db = -11.86
+
+[node name="audioAlert" type="AudioStreamPlayer" parent="." unique_id=370517322]
+stream = ExtResource("5_xl5il")
+volume_db = -8.211
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0vj0r4362032"
-path="res://.godot/imported/face.png-fa630eaadef21366e89c3ced85797ddd.ctex"
+uid="uid://85wmgut37eut"
+path="res://.godot/imported/bgFloor.png-380e7b63d4ffd17a9937359eeaa0d0e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/binFall/face.png"
-dest_files=["res://.godot/imported/face.png-fa630eaadef21366e89c3ced85797ddd.ctex"]
+source_file="res://scenes/mainGame/bgFloor.png"
+dest_files=["res://.godot/imported/bgFloor.png-380e7b63d4ffd17a9937359eeaa0d0e4.ctex"]
 
 [params]
 
