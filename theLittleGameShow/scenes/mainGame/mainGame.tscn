@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://br3122ai3bk60" path="res://scenes/mainGame/spawn.gd" id="6_s4nnb"]
 [ext_resource type="PackedScene" uid="uid://gnihcxpckec" path="res://scenes/acidDrop/acidDrop.tscn" id="8_imv2l"]
 [ext_resource type="PackedScene" uid="uid://bafoq28f63i8q" path="res://scenes/cheese/cheese.tscn" id="8_rj1ge"]
+[ext_resource type="PackedScene" uid="uid://bq0etfn8a1ojr" path="res://scenes/dirt/dirt.tscn" id="10_ifudq"]
 [ext_resource type="AudioStream" uid="uid://x1fqayjrppg2" path="res://scenes/mainGame/music.mp3" id="10_pcnym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
@@ -64,6 +65,7 @@ script = ExtResource("6_s4nnb")
 cheese_scene = ExtResource("8_rj1ge")
 drop_scene = ExtResource("8_imv2l")
 bin_scene = ExtResource("4_o3sv8")
+dirt_scene = ExtResource("10_ifudq")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1939451634]
 stream = ExtResource("10_pcnym")

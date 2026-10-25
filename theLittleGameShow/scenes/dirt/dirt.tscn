@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bq0etfn8a1ojr"]
+
+[ext_resource type="Script" uid="uid://baebqel16ii2x" path="res://scenes/dirt/dirt.gd" id="1_0so0k"]
+[ext_resource type="Texture2D" uid="uid://bk27ce2t28f1u" path="res://scenes/dirt/dirt.png" id="1_urtws"]
+[ext_resource type="AudioStream" uid="uid://d3gm2xmfmyo07" path="res://scenes/dirt/land.mp3" id="2_phdf4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
+size = Vector2(16, 16)
+
+[node name="dirt" type="CharacterBody2D" unique_id=1255048647]
+collision_layer = 2
+script = ExtResource("1_0so0k")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1055290089]
+texture = ExtResource("1_urtws")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=746044521]
+shape = SubResource("RectangleShape2D_qywog")
+
+[node name="area" type="Area2D" parent="." unique_id=1637458898]
+collision_layer = 2
+collision_mask = 129
+
+[node name="collision" type="CollisionShape2D" parent="area" unique_id=1840057511]
+shape = SubResource("RectangleShape2D_1j0vx")
+debug_color = Color(0.96421045, 0.12812573, 0.36343232, 0.41960785)
+
+[node name="audioLanding" type="AudioStreamPlayer" parent="." unique_id=1095594078]
+stream = ExtResource("2_phdf4")
+volume_db = -5.0
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

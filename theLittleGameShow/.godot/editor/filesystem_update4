@@ -3,3 +3,9 @@ res://deathScreen/flash.gdshader
 res://intro/intro.gd
 res://deathScreen/deathScreen.tscn
 res://deathScreen/death_screen.gd
+res://scenes/mainGame/mainGame.tscn
+res://scenes/binFall/binFall.gd
+res://scenes/binFall/binFall.tscn
+res://scenes/dirt/dirt.tscn
+res://scenes/dirt/dirt.gd
+res://scenes/mainGame/spawn.gd

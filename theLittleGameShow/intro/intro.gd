@@ -38,18 +38,17 @@ func _Bob(time, originalPos, freq, amp):
 
 func _loadImage():
 	var tween = create_tween()
-	tween.tween_property(display, "modulate:a", 0.0, 0.5)
+	tween.tween_property(display, "modulate:a", 0.0, 0.2)
 	
 	var image = load(images[imageNum])
 	display.texture = image
 	
-	tween.tween_property(display, "modulate:a", 1.0, 0.5)
+	tween.tween_property(display, "modulate:a", 1.0, 0.2)
 	await tween.finished
 
 
 func _on_next_button_pressed() -> void:
 	if imageNum < len(images) -1:
-		print("CLICK")
 		imageNum += 1
 		_loadImage()
 		clickSound.play()

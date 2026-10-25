@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdl8pxvtmlmgi" path="res://intro/button/buttonNormal.png" id="4_vyos2"]
 [ext_resource type="Texture2D" uid="uid://b34v423nvgnci" path="res://intro/button/buttonDown.png" id="5_1q7h5"]
 [ext_resource type="AudioStream" uid="uid://ba6jwvw4uksge" path="res://intro/button/click.mp3" id="6_1q7h5"]
+[ext_resource type="Texture2D" uid="uid://bxe4kx2ehy1gm" path="res://deathScreen/bG.png" id="7_a5lnx"]
 
 [node name="Intro" type="Control" unique_id=297636444]
 layout_mode = 3
@@ -69,5 +70,12 @@ color = Color(0, 0, 0, 1)
 [node name="clickSound" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=1020605611]
 stream = ExtResource("6_1q7h5")
 volume_db = -5.0
+
+[node name="bG" type="TextureRect" parent="." unique_id=1328591933]
+z_index = -2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("7_a5lnx")
 
 [connection signal="pressed" from="CanvasLayer/nextButton" to="." method="_on_next_button_pressed"]

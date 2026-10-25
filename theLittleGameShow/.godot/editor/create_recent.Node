@@ -1,4 +1,8 @@
 AudioStreamPlayer
+CollisionShape2D
+Area2D
+Sprite2D
+CharacterBody2D
 CanvasLayer
 Button
 TextureButton
@@ -7,8 +11,4 @@ TextureRect
 Timer
 Label
 AnimatedSprite2D
-Sprite2D
 Node2D
-CollisionShape2D
-Area2D
-CharacterBody2D

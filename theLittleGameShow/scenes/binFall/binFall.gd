@@ -83,6 +83,9 @@ func _on_area_body_entered(body: Node2D) -> void:
 			can_deal_damage = false
 			hit_player = true
 			
+			camera.trigger_shake()
+			fallAudio.play()
+			
 			var tween = get_tree().create_tween()
 			tween.tween_callback(RemoveHealth)
 			tween.tween_property(sprite, "modulate:a", 0.0, 0.5)

@@ -3,6 +3,7 @@ extends Node2D
 @export var cheese_scene: PackedScene
 @export var drop_scene: PackedScene
 @export var bin_scene: PackedScene
+@export var dirt_scene: PackedScene
 
 @onready var music = $"../music"
 @onready var timer = $"../spawnTimer"
@@ -29,15 +30,24 @@ func _on_spawn_timer_timeout() -> void:
 	var min_distance = 24.0
 	
 	for i in range(amount):
+		var cheese_count = get_tree().get_nodes_in_group("cheese_items").size()
+		var drop_count = get_tree().get_nodes_in_group("drop_items").size()
+		var dirt_count = get_tree().get_nodes_in_group("dirt_items").size()
+		var bin_count = get_tree().get_nodes_in_group("bin_items").size()
+		
 		var num = rng.randi_range(0, 99)
 		var selected_scene: PackedScene = null
 
-		if num < 5:
+		if num < 15 and cheese_count < 2:
 			selected_scene = cheese_scene
-		elif num < 70:
+		elif num < 50 and drop_count < 3:
 			selected_scene = drop_scene
-		else:
+		elif num < 80 and dirt_count < 2:
+			selected_scene = dirt_scene
+		elif num >= 80 and bin_count < 3:
 			selected_scene = bin_scene
+		else:
+			continue
 			
 		if selected_scene:
 			var spawn_x = 0.0
@@ -70,6 +80,16 @@ func _on_spawn_timer_timeout() -> void:
 			spawned_x_positions.append(spawn_x)
 			
 			var instance = selected_scene.instantiate()
+			
+			if selected_scene == cheese_scene:
+				instance.add_to_group("cheese_items")
+			elif selected_scene == drop_scene:
+				instance.add_to_group("drop_items")
+			elif selected_scene == dirt_scene:
+				instance.add_to_group("dirt_items")
+			elif selected_scene == bin_scene:
+				instance.add_to_group("bin_items")
+			
 			instance.global_position.x = spawn_x
 			instance.position.y = -32
 			get_parent().add_child.call_deferred(instance)
@@ -80,7 +100,7 @@ func _process(delta: float) -> void:
 		timer.wait_time = max(0.4, 2.0 - (time_elapsed * 0.015))
 	else:
 		timer.wait_time = 100
-	
+		
 	if globalValues.playerHealth <= 0:
 		get_tree().paused = true
 		sceneTransition.change_scene_to("res://deathScreen/deathScreen.tscn", 1, 0.5, "BLACK")
