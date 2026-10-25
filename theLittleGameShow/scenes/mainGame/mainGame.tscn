@@ -2,23 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://basjb7t32htae" path="res://UI/generalUI.tscn" id="1_o3sv8"]
 [ext_resource type="PackedScene" uid="uid://dhn45pigmlprm" path="res://player/playerScene.tscn" id="2_xku7g"]
-[ext_resource type="Texture2D" uid="uid://y0r35yq7b30s" path="res://scenes/mainGame/bgBackground.png" id="4_5q46h"]
+[ext_resource type="Texture2D" uid="uid://117ganynskgu" path="res://scenes/mainGame/bgBackground2.png" id="4_5q46h"]
 [ext_resource type="PackedScene" uid="uid://dic7g0mwrmogi" path="res://scenes/binFall/binFall.tscn" id="4_o3sv8"]
 [ext_resource type="Texture2D" uid="uid://85wmgut37eut" path="res://scenes/mainGame/bgFloor.png" id="5_rj1ge"]
 [ext_resource type="Script" uid="uid://bfxwhf0mqdpuu" path="res://scenes/mainGame/camer_shake.gd" id="5_uqcru"]
-[ext_resource type="PackedScene" uid="uid://gnihcxpckec" path="res://scenes/acidDrop/acidDrop.tscn" id="6_s4nnb"]
+[ext_resource type="Script" uid="uid://br3122ai3bk60" path="res://scenes/mainGame/spawn.gd" id="6_s4nnb"]
+[ext_resource type="PackedScene" uid="uid://gnihcxpckec" path="res://scenes/acidDrop/acidDrop.tscn" id="8_imv2l"]
+[ext_resource type="PackedScene" uid="uid://bafoq28f63i8q" path="res://scenes/cheese/cheese.tscn" id="8_rj1ge"]
+[ext_resource type="AudioStream" uid="uid://x1fqayjrppg2" path="res://scenes/mainGame/music.mp3" id="10_pcnym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
-size = Vector2(10, 128)
+size = Vector2(11, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
 size = Vector2(128, 11)
 
-[node name="main" type="Node2D" unique_id=1665889982]
+[node name="main" type="Node2D" unique_id=1130939024]
 
 [node name="PlayerScene" parent="." unique_id=519120538 instance=ExtResource("2_xku7g")]
 z_index = 5
-position = Vector2(8, 115)
+position = Vector2(64, 115)
 
 [node name="camera" type="Camera2D" parent="." unique_id=852184208]
 position = Vector2(64, 64)
@@ -35,14 +38,14 @@ position = Vector2(-5, 64)
 shape = SubResource("RectangleShape2D_1j0vx")
 
 [node name="collisionshape2" type="CollisionShape2D" parent="walls" unique_id=1094170426]
-position = Vector2(133, 64)
+position = Vector2(133.5, 64)
 shape = SubResource("RectangleShape2D_1j0vx")
 
 [node name="ground" type="StaticBody2D" parent="." unique_id=1776856293]
 
 [node name="bG" type="Sprite2D" parent="ground" unique_id=1649982502]
-z_index = -1
-position = Vector2(64, 55)
+z_index = -8
+position = Vector2(64, -18)
 scale = Vector2(1, 1.0067568)
 texture = ExtResource("4_5q46h")
 
@@ -56,8 +59,15 @@ z_index = 1
 position = Vector2(64, 121)
 shape = SubResource("RectangleShape2D_qywog")
 
-[node name="BinFall" parent="." unique_id=1566326600 instance=ExtResource("4_o3sv8")]
-position = Vector2(36, -17)
+[node name="spawner" type="Node2D" parent="." unique_id=1006486258]
+script = ExtResource("6_s4nnb")
+cheese_scene = ExtResource("8_rj1ge")
+drop_scene = ExtResource("8_imv2l")
+bin_scene = ExtResource("4_o3sv8")
 
-[node name="AcidDrop5" parent="." unique_id=303485572 instance=ExtResource("6_s4nnb")]
-position = Vector2(68, -6)
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1939451634]
+stream = ExtResource("10_pcnym")
+volume_db = -5.0
+parameters/looping = true
+
+[node name="spawnTimer" type="Timer" parent="." unique_id=354606023]

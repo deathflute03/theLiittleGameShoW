@@ -34,14 +34,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
-size = Vector2(14, 32)
+size = Vector2(10, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
-size = Vector2(14, 33)
+size = Vector2(10, 32)
 
 [node name="BinFall" type="CharacterBody2D" unique_id=1813090224]
 collision_layer = 2
-collision_mask = 129
 script = ExtResource("1_xgxvp")
 
 [node name="sprite2D" type="AnimatedSprite2D" parent="." unique_id=237895188]
@@ -55,25 +54,24 @@ shape = SubResource("RectangleShape2D_qywog")
 
 [node name="area" type="Area2D" parent="." unique_id=494901182]
 collision_layer = 2
-collision_mask = 129
+collision_mask = 128
 
 [node name="collision" type="CollisionShape2D" parent="area" unique_id=1761542200]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1j0vx")
 debug_color = Color(0.7047281, 0, 0.25844368, 0.41960785)
 
 [node name="warningSprite" type="Sprite2D" parent="." unique_id=1615966834]
 z_index = -1
-position = Vector2(0, 91.99999)
-scale = Vector2(0.43750003, 1.0371621)
+position = Vector2(-1.7881393e-07, 91.99999)
+scale = Vector2(0.375, 1.0371621)
 texture = ExtResource("3_o2ppc")
 
 [node name="audioFall" type="AudioStreamPlayer" parent="." unique_id=1974721788]
 stream = ExtResource("4_vffqu")
-volume_db = -11.86
+volume_db = -18.0
 
 [node name="audioAlert" type="AudioStreamPlayer" parent="." unique_id=370517322]
 stream = ExtResource("5_xl5il")
-volume_db = -8.211
+volume_db = -15.0
 
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

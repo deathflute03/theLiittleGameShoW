@@ -1,8 +1,11 @@
-res://scenes/binFall/binFall.tscn
+res://deathScreen/deathScreen.tscn
+res://deathScreen/flash.gdshader
+res://deathScreen/death_screen.gd
 res://scenes/binFall/binFall.gd
 res://scenes/mainGame/mainGame.tscn
-res://scenes/acidDrop/acidDrop.tscn
-res://player/playerScene.tscn
-res://scenes/acidDrop/acid_drop.gd
+res://scenes/binFall/binFall.tscn
+res://scenes/mainGame/spawn.gd
+res://scenes/mainGame/camer_shake.gd
+res://globalValues/globalValues.gd
 res://UI/generalUI.tscn
 res://UI/general_ui.gd

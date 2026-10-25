@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://b1kbj4s2y0f6a" path="res://player/player.png" id="2_lfijo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
-size = Vector2(13, 5.5)
+size = Vector2(10.5, 6)
 
 [node name="PlayerScene" type="CharacterBody2D" unique_id=666121678]
 collision_layer = 128
-collision_mask = 133
+collision_mask = 5
 script = ExtResource("1_qfmw6")
 
 [node name="sprite" type="Sprite2D" parent="." unique_id=1023241400]
@@ -16,5 +16,5 @@ position = Vector2(0, -6)
 texture = ExtResource("2_lfijo")
 
 [node name="collision" type="CollisionShape2D" parent="." unique_id=2120399263]
-position = Vector2(0, -0.75)
+position = Vector2(1.25, -1)
 shape = SubResource("RectangleShape2D_qywog")

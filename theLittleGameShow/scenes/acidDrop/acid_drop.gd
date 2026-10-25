@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 50.0
+var SPEED = 50.0
 var damage = 1
+var maxSPEED = randf_range(65, 75)
 var score = 20
 var heal = 0
 
@@ -12,6 +13,7 @@ var heal = 0
 func _physics_process(delta: float) -> void:
 	sprite.play("falling")
 	if not is_on_floor():
+		SPEED = lerp(SPEED, maxSPEED, 0.08)
 		velocity.y += SPEED * delta
 	
 

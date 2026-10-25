@@ -4,6 +4,19 @@ extends Camera2D
 @export var max_shake: float = 4.0
 @export var shake_fade: float = 5.0
 
+func _ready() -> void:
+	self.position = Vector2(64,-100)
+	
+	await get_tree().create_timer(0.2).timeout
+	
+	var tween = create_tween().set_trans(Tween.TRANS_SINE)
+	
+	tween.tween_property(self,"position", Vector2(64,64), 1)
+	tween.tween_callback(finishCutscene)
+
+func finishCutscene():
+	globalValues.initalCutsceneDone = true
+
 var _shake_strength: float = 0.0
 
 func trigger_shake() -> void:

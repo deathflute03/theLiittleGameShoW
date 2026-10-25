@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bafoq28f63i8q"]
+
+[ext_resource type="Texture2D" uid="uid://csujaqgao5jye" path="res://scenes/cheese/cheese.png" id="1_ltg05"]
+[ext_resource type="Script" uid="uid://bdu7sqt8087o4" path="res://scenes/cheese/cheese.gd" id="1_o2rk6"]
+[ext_resource type="AudioStream" uid="uid://bp7glj1a53r65" path="res://scenes/cheese/sound.mp3" id="2_iqfdt"]
+[ext_resource type="AudioStream" uid="uid://b80631k1306pr" path="res://scenes/cheese/land.mp3" id="4_vul4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qywog"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1j0vx"]
+size = Vector2(14, 14)
+
+[node name="cheese" type="CharacterBody2D" unique_id=1208767545]
+collision_layer = 2
+script = ExtResource("1_o2rk6")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=560409470]
+texture = ExtResource("1_ltg05")
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1408154938]
+shape = SubResource("RectangleShape2D_qywog")
+
+[node name="area" type="Area2D" parent="." unique_id=67714861]
+collision_layer = 2
+collision_mask = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="area" unique_id=261821711]
+shape = SubResource("RectangleShape2D_1j0vx")
+debug_color = Color(0.97065264, 0, 0.45647526, 0.41960785)
+
+[node name="sound" type="AudioStreamPlayer" parent="." unique_id=1758948822]
+stream = ExtResource("2_iqfdt")
+pitch_scale = 2.5
+
+[node name="audioLanding" type="AudioStreamPlayer" parent="." unique_id=593613569]
+stream = ExtResource("4_vul4e")
+volume_db = -8.0
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]
