@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1792903909
+::res://::1792905614
 icon.svg::CompressedTexture2D::3220890016767094800::1792721871::1792722311::1::::<><><>0<>0<>838bfc087998bb31cf46bc7efc679983<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 label.png::CompressedTexture2D::3906652730413877243::1792903909::1792903913::1::::<><><>0<>0<>5253dbf6aa0e54850e8f9637cd8af66a<>res://.godot/imported/label.png-9085eefdb3ac8ec5cf5eb89d19c36ab5.ctex::
 ::res://deathScreen/::1792902616
@@ -14,6 +14,11 @@ music.mp3::AudioStreamMP3::1919896515026201920::1792895202::1792895208::1::::<><
 ranks.png::CompressedTexture2D::3438579710973522400::1792898049::1792898051::1::::<><><>0<>0<>e60ce01b146db44682d74eb9eab3a9b6<>res://.godot/imported/ranks.png-d42ee1ce817f48e12f3043b02c6d6b8b.ctex::
 ::res://globalValues/::1792900945
 globalValues.gd::GDScript::6762805964664509936::1792900945::0::1::::<>Node<><>0<>0<><>::
+::res://intro/::1792907574
+dontTouchProjectiles.png::CompressedTexture2D::2467140842002545037::1792905636::1792907591::1::::<><><>0<>0<>f6fefdcb82f580970e383e5f976b2a08<>res://.godot/imported/dontTouchProjectiles.png-fc5605db72915df1588d6111cf1012c8.ctex::
+get_cheese!.png::CompressedTexture2D::7220087357277475568::1792906953::1792907591::1::::<><><>0<>0<>bc7fc8e6af2fcc125ff03eb18b8d9c3c<>res://.godot/imported/get_cheese!.png-5e3fa0982b8e57e147f1d584739667e6.ctex::
+goodLuck.png::CompressedTexture2D::7011282862361870080::1792907574::1792907591::1::::<><><>0<>0<>fbab9facb062f7af51df52512b5b4d22<>res://.godot/imported/goodLuck.png-62b0d1c239061814d365c87bbbf1f933.ctex::
+howToMove.png::CompressedTexture2D::309907317786279028::1792906364::1792907591::1::::<><><>0<>0<>3ecfcafa87edc1bf4cf8be55dff751d4<>res://.godot/imported/howToMove.png-09a8453ec9138e7c32d045794f31cef9.ctex::
 ::res://player/::1792892693
 player.png::CompressedTexture2D::4232052737203902938::1792780369::1792781312::1::::<><><>0<>0<>df2cb88d6a6a2f443aacd926ee3de2ba<>res://.godot/imported/player.png-1ad27fc2a62fa126eae918723933dd6f.ctex::
 playerMovement.gd::GDScript::352293890346396246::1792786686::0::1::::<>CharacterBody2D<><>0<>0<><>::
