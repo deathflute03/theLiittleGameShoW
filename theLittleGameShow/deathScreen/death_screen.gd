@@ -5,6 +5,7 @@ extends Control
 @onready var scoreLabel : Label = $canvas/scoreLabel
 @onready var playAgain : TextureButton = $canvas/playAgain
 @onready var music = $music
+@onready var clickSound = $canvas/clickSound
 
 var rankBobTime = 0.0
 var rankBobFreq = 4
@@ -80,4 +81,6 @@ func _on_play_again_pressed() -> void:
 	globalValues.playerHealth = 3
 	globalValues.score = 0
 	globalValues.initalCutsceneDone = false
+	clickSound.play()
+	await clickSound.finished
 	sceneTransition.change_scene_to("res://scenes/mainGame/mainGame.tscn", 0.5, 0.5, "WHITE")

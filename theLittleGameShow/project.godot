@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="theLittleGameShow"
-run/main_scene="uid://ceaf0eubx1bgy"
+run/main_scene="uid://ygy0mk64f2i4"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/stretch_mode=0
+boot_splash/use_filter=false
 boot_splash/image="uid://bvwn88wigfe4j"
 config/icon="res://icon.svg"
 

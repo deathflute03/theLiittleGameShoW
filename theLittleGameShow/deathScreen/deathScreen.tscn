@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://dpmj7irwjxbdu" path="res://deathScreen/flash.gdshader" id="3_okmgq"]
 [ext_resource type="Texture2D" uid="uid://dliyoypdx0gsk" path="res://deathScreen/buttonPressed.png" id="5_y66v2"]
 [ext_resource type="Texture2D" uid="uid://dv12rxcg0yc0p" path="res://deathScreen/buttonDisabled.png" id="6_mdgqd"]
+[ext_resource type="AudioStream" uid="uid://ba6jwvw4uksge" path="res://intro/button/click.mp3" id="9_b3tpr"]
 [ext_resource type="AudioStream" uid="uid://2maod4f4qdae" path="res://deathScreen/music.mp3" id="9_q72bl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xl5il"]
@@ -118,6 +119,10 @@ texture_normal = ExtResource("1_r6v8s")
 texture_pressed = ExtResource("5_y66v2")
 texture_disabled = ExtResource("6_mdgqd")
 stretch_mode = 0
+
+[node name="clickSound" type="AudioStreamPlayer" parent="canvas" unique_id=669017821]
+stream = ExtResource("9_b3tpr")
+volume_db = -5.0
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=885586148]
 stream = ExtResource("9_q72bl")
